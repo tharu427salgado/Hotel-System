@@ -1,0 +1,15 @@
+::ng-deep .mat-card-header-text {
+    width: 100%;
+}
+
+[type='file'] {
+    display: none;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.magin-eye {
+    margin-bottom: 1.2rem;
+}

@@ -1,0 +1,11 @@
+::ng-deep .mat-card-header-text {
+    width: 100%;
+}
+
+[type='file'] {
+    display: none;
+}
+
+.example-full-width {
+    width: 100%;
+}

@@ -1,0 +1,40 @@
+<mat-card>
+    <form #loginForm="ngForm">
+        <mat-card-header>
+            <mat-card-title class="d-flex justify-content-between aling-items-center">
+                <span>Sign In</span>
+                <button mat-raised-button color="primary" type="submit" (click)="onSubmit(loginForm)">Sign In</button>
+            </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content class="p-3">
+            <div class="w-100">
+                <div class="col">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>User Name</mat-label>
+                        <input ngModel name="username" matInput required>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="w-100">
+                <div class="col d-flex justify-content-between">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <span matSuffix>
+                            <button (click)="onClick()" mat-icon-button
+                                aria-label="Example icon-button with a heart icon">
+                                <mat-icon *ngIf="eye">visibility</mat-icon>
+                                <mat-icon *ngIf="!eye">visibility_off</mat-icon>
+                            </button></span>
+                        <input ngModel name="password" [type]="eye ? 'text' : 'password'" matInput required>
+
+                        <!-- <span class="material-icons">visibility</span> -->
+                    </mat-form-field>
+                </div>
+            </div>
+
+        </mat-card-content>
+    </form>
+
+</mat-card>

@@ -1,0 +1,59 @@
+<mat-card>
+    <form #reportForm="ngForm">
+        <mat-card-content class="p-3">
+            <mat-form-field hidden="true">
+                <input ngModel name="id" matInput>
+            </mat-form-field>
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Room Number</mat-label>
+                        <input ngModel name="roomnum" matInput type="number" required>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-md-6">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Full Name</mat-label>
+                        <input ngModel name="name" matInput required>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="w-100">
+                        <mat-label>Phone Number</mat-label>
+                        <span matPrefix>+66 &nbsp;</span>
+                        <input ngModel name="phonenum" matInput type="number" required>
+                    </mat-form-field>
+                </div>
+
+
+                <div class="col-md-6 ">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Your Requre</mat-label>
+                        <select matNativeControl ngModel name="requre" matInput required>
+                            <option value="Rush">Rush</option>
+                            <option value="Normal">Normal</option>
+                        </select>
+
+                    </mat-form-field>
+                </div>
+            </div>
+            <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Title Problem</mat-label>
+                <input ngModel name="title" matInput required>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="example-full-width">
+                <mat-label>Report The Problems</mat-label>
+                <textarea matInput ngModel name="theproblems" required></textarea>
+            </mat-form-field>
+
+            <mat-form-field hidden="true">
+                <input ngModel name="admin_check" matInput>
+            </mat-form-field>
+        </mat-card-content>
+    </form>
+</mat-card>

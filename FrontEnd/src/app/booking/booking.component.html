@@ -1,0 +1,55 @@
+<mat-card>
+    <form #reportForm="ngForm" (submit)="onSubmit(reportForm)">
+        <mat-card-header>
+            <mat-card-title class="d-flex justify-content-between aling-items-center">
+                <span>Booking</span>
+                <button mat-raised-button color="primary" type="submit">Book!</button>
+            </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content class="p-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Full Name</mat-label>
+                        <input [(ngModel)]="valueName" name="name" matInput required>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-md-6">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>ID Card</mat-label>
+                        <input [(ngModel)]="valueIDcard" name="idcard" matInput type="number" required>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-md-6">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input [(ngModel)]="valueEmial" type="email" matInput name="email" placeholder="Ex. pat@example.com">
+                    </mat-form-field>
+                </div>
+
+                <div class="col-md-6">
+                    <mat-form-field class="w-100">
+                        <mat-label>Phone Number</mat-label>
+                        <span matPrefix>+66 &nbsp;</span>
+                        <input [(ngModel)]="valuePhone" name="phoneNum" matInput type="number" required>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-md-6">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Choose Check In a date</mat-label>
+                        <input ngModel matInput name="date" type="date" required>
+                        <!-- <input ngModel matInput name="date" [matDatepicker]="picker"> -->
+                        <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker> -->
+                    </mat-form-field>
+                </div>
+            </div>
+
+        </mat-card-content>
+    </form>
+
+</mat-card>

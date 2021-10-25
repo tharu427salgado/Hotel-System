@@ -1,0 +1,48 @@
+<mat-card>
+    <form #CheckoutForm="ngForm" (submit)="onCheckout(CheckoutForm)">
+        <mat-card-header>
+            <mat-card-title class="d-flex justify-content-between aling-items-center">
+                <span>Check Out</span>
+                <button mat-raised-button color="primary" type="submit">Confirm</button>
+            </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content class="p-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Room Number</mat-label>
+                        <input [(ngModel)]="valueRoomnum" name="roomNum" matInput type="number" required>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-md-6">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Full Name</mat-label>
+                        <input [(ngModel)]="valueName" name="name" matInput required>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="w-100">
+                        <mat-label>Phone Number</mat-label>
+                        <span matPrefix>+66 &nbsp;</span>
+                        <input [(ngModel)]="valuePhone" name="phoneNum" matInput type="number" required>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-md-6 ">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Choose Check Out a date</mat-label>
+                        <input ngModel matInput name="date" [matDatepicker]="picker">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+    </form>
+
+</mat-card>

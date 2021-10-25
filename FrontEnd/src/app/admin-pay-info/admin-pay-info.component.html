@@ -1,0 +1,87 @@
+<mat-card>
+    <form #payForm="ngForm">
+        <mat-card-header>
+            <mat-card-title class="d-flex justify-content-between aling-items-center">
+                <span>Pay</span>
+            </mat-card-title>
+        </mat-card-header>
+
+
+        <mat-card-content class="p-3">
+
+            <mat-form-field hidden="true">
+                <input ngModel name="id" matInput>
+            </mat-form-field>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label class="font">Room Number</mat-label>
+                        <input ngModel name="roomnum" matInput type="number" required>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-md-6">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label class="font">Full Name</mat-label>
+                        <input ngModel name="name" matInput required>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <mat-form-field class="w-100 font" appearance="outline">
+                        <mat-label>Phone Number</mat-label>
+                        <span matPrefix class="font">+66 &nbsp;</span>
+                        <input ngModel name="phonenum" matInput type="number" required>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-md-4">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label class="font">Time</mat-label>
+                        <input ngModel name="time" matInput type="time" required>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-md-4">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label class="font">date</mat-label>
+                        <input ngModel name="date" matInput type="date" required>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label class="font">จำนวนเงิน</mat-label>
+                        <input ngModel name="amount" matInput type="number" required>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-md-6 ">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label class="font">ธนาคารที่โอนเงิน</mat-label>
+                        <input ngModel name="bank" matInput required>
+                    </mat-form-field>
+                </div>
+
+            </div>
+
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-4" *ngIf="imagePreview">
+                    <img class="img-fluid border" [src]="imagePreview" alt="">
+                </div>
+                <div class="col-md-8">
+                    <!-- <button mat-stroked-button (click)="fileInput.click()" type="button">
+                        <mat-icon>photo</mat-icon>
+                        <span>Selec Image</span>
+                    </button> -->
+                    <input (change)="onPreviewImage($event)" #fileInput type="file" accept="image/*">
+                </div>
+            </div>
+        </mat-card-content>
+    </form>
+</mat-card>

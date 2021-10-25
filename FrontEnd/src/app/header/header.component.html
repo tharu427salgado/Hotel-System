@@ -1,0 +1,57 @@
+<mat-toolbar color="primary" class="example-spacer">
+    <div (click)="onClickNavToggle()">
+        <button *ngIf="mobileQueryMax" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
+
+    <button mat-button *ngIf="!mobileQueryMax" [routerLink]="['']">
+        <span class="mat-h1 font-header">Dragon Hotel</span>
+    </button>
+
+    <button mat-button *ngIf="mobileQueryMax" [routerLink]="['']">
+        <img class="avatar rounded-circle bg-white" src="assets/icon/Logo.png" alt="">
+    </button>
+
+
+    <div *ngIf="!mobileQueryMax && !admin">
+        <button class="font-menu" mat-button [routerLink]="['/news']">News</button>
+        <button class="font-menu" mat-button [routerLink]="['booking']">Booking</button>
+        <button class="font-menu" mat-button [matMenuTriggerFor]="menu">Service</button>
+        <mat-menu #menu="matMenu">
+            <button class="font-menu" mat-menu-item>ค่าน้ำ/ไฟ</button>
+            <button class="font-menu" mat-menu-item [routerLink]="['serve/agreement']">สัญญาเช่า</button>
+            <button class="font-menu" mat-menu-item [routerLink]="['serve/report']">แจ้งปัญหา</button>
+            <button class="font-menu" mat-menu-item [routerLink]="['serve/checkout']">แจ้งออก</button>
+        </mat-menu>
+        <button class="font-menu" mat-button [routerLink]="['pay']">Pay</button>
+        <button class="font-menu" mat-button>About</button>
+    </div>
+
+
+    <span class="flex-fill"></span>
+
+    <button mat-button class="font" *ngIf="!Iflog" [routerLink]="['login']">Sign In</button>
+    <div class="vl" *ngIf="!Iflog"></div>
+    <button mat-button class="font" *ngIf="!Iflog" [routerLink]="['register']">Sign Up</button>
+
+    <div *ngIf="Iflog">
+        <button mat-button [matMenuTriggerFor]="list">
+            <mat-icon>person</mat-icon>
+        </button>
+        <mat-menu #list="matMenu">
+            <button mat-menu-item>
+                <mat-icon>manage_accounts</mat-icon>
+                <span>Edit Profile</span>
+            </button>
+            <button mat-menu-item>
+                <mat-icon>list_alt</mat-icon>
+                <span>Your list</span>
+            </button>
+            <button mat-menu-item (click)="clickLogout()">
+                <mat-icon>logout</mat-icon>
+                <span>Sign Out</span>
+            </button>
+        </mat-menu>
+    </div>
+</mat-toolbar>

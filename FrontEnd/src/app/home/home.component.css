@@ -1,0 +1,120 @@
+.image {
+    height: 40em;
+    background-size: cover;
+    width: auto;
+    background-image: url('src/assets/icon/skyhero.png');
+    background-position: 100% 100%;
+}
+
+.paragrap {
+    width: 800px;
+}
+
+.paragraps {
+    width: 800px;
+    height: auto;
+}
+
+.text {
+    color: black;
+    margin-top: 1rem;
+    line-height: 2rem;
+    font-family: inherit;
+    font-weight: 300;
+}
+
+.heroheadline {
+    font-size: 3rem;
+    line-height: 3rem;
+    font-weight: 300;
+    margin-top: 1rem;
+    margin-right: 0;
+    color: white;
+}
+
+.Dragonheadline {
+    font-size: 3rem;
+    line-height: 3rem;
+    font-weight: 300;
+    margin: 0;
+    margin-right: 0;
+    color: white;
+}
+
+.button.hero-cta {
+    padding: 2px 34px 0;
+    font-size: 18px;
+    font-size: 1rem;
+    color: #1976d2;
+    font-weight: 500;
+    line-height: 40px;
+    line-height: 3rem;
+    line-break: auto;
+    background-color: #fff;
+    border-radius: 48px;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 26%);
+    box-sizing: border-box;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.maginbuttom {
+    margin-top: 10px;
+}
+
+.button,
+a.button.mat-button {
+    color: inherit;
+    display: inline-block;
+    line-height: 32px;
+    line-height: 3.2rem;
+    padding: 0 16px;
+    font-size: 14px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    border-radius: 3px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    border: none;
+}
+
+.imageset {
+    width: auto;
+    height: 200px;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 26%);
+    margin-top: 1rem;
+}
+
+.imagesetright {
+    width: auto;
+    height: 200px;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 26%);
+}
+
+.textheader {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #1976d2;
+    text-transform: uppercase;
+}
+
+.vl {
+    margin: 4rem;
+}
+
+.magin {
+    margin-bottom: 4rem;
+}
+
+@media (max-width: 800px) {
+    .hero {
+        text-align: center;
+        margin-left: 1px;
+    }
+    .heroparagrap {
+        text-align: center;
+        margin-left: 1px;
+        margin-top: 1rem;
+    }
+}

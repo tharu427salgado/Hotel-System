@@ -1,0 +1,86 @@
+<div class="mat-elevation-z8 mt-3 table-responsive">
+
+    <div class="d-flex justify-content-between align-items-center p-3 search_form">
+        <mat-form-field appearance="outline" class="w-50">
+            <mat-label>Search products</mat-label>
+            <input [(ngModel)]="textSearch" (keyup)="search($event)" matInput placeholder="name, price, stock">
+            <mat-icon matSuffix *ngIf="!textSearch">search</mat-icon>
+            <button (click)="clearSearch()" mat-icon-button matSuffix *ngIf="textSearch">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+
+        <button type="button" class="btn btn-primary maginbutton" (click)="onclickSubmitcheck()">
+            Submit Checklist
+        </button>
+    </div>
+
+    <div class="table-responsive">
+        <table mat-table matSort [dataSource]="dataSource" class="w-100 table-striped table-hover">
+            <ng-container matColumnDef="image">
+                <th mat-header-cell *matHeaderCellDef class="text-uppercase text-center"> Image </th>
+                <td mat-cell *matCellDef="let baba">
+                    <div class="over-lay mx-auto d-block border-top border-left border-right rounded-top">
+                        <img [src]="baba.image" class="w-100 bg-light rounded-top" alt="">
+                        <div class="over-lay-text text-center mat-small"> {{ baba.id }} </div>
+                    </div>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="name">
+                <th mat-sort-header mat-header-cell *matHeaderCellDef class="text-uppercase"> Name </th>
+                <td mat-cell *matCellDef="let baba" class="text-truncate"> {{ baba.name }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="roomnum">
+                <th mat-sort-header mat-header-cell *matHeaderCellDef class="text-uppercase text-right"> room number
+                </th>
+                <td mat-cell *matCellDef="let baba" class="text-right"> {{ baba.roomnum}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="time">
+                <th mat-sort-header mat-header-cell *matHeaderCellDef class="text-uppercase text-center"> time </th>
+                <td mat-cell *matCellDef="let baba" class="text-center"> {{ baba.time}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="date">
+                <th mat-sort-header mat-header-cell *matHeaderCellDef class="text-uppercase text-center"> date </th>
+                <td mat-cell *matCellDef="let baba" class="text-center"> {{ baba.date}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="amount">
+                <th mat-sort-header mat-header-cell *matHeaderCellDef class="text-uppercase text-center"> amount </th>
+                <td mat-cell *matCellDef="let baba" class="text-center"> {{ baba.amount}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="bank">
+                <th mat-sort-header mat-header-cell *matHeaderCellDef class="text-uppercase text-center"> bank </th>
+                <td mat-cell *matCellDef="let baba" class="text-center"> {{ baba.bank}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="admin_check">
+                <th mat-header-cell *matHeaderCellDef class="text-uppercase text-center"> Action </th>
+                <td mat-cell *matCellDef="let baba" class="text-center">
+                    <section class="example-section">
+                        <button mat-icon-button [routerLink]="['/admin-pay/info/',baba.id]">
+                            <mat-icon class="material-icons-outlined magininfo">info_outline</mat-icon>
+                        </button>
+
+
+                        <mat-checkbox *ngIf="!baba.admin_check" class="example-margin" (click)="oncheck(baba.id)">
+                        </mat-checkbox>
+                        <mat-checkbox *ngIf="baba.admin_check" class="example-margin" [disabled]="true">
+                        </mat-checkbox>
+
+                    </section>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+    </div>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [showFirstLastButtons]="true"></mat-paginator>
+</div>
